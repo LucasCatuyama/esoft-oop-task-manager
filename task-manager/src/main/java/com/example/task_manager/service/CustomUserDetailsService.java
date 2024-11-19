@@ -13,11 +13,11 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        if ("user".equals(username)) { // Replace this with your actual user lookup logic
+        if ("user".equals(username)) { 
             return new User(
-                    "user", // username
+                    "user", 
                     new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder().encode("password"), // encoded password
-                    new ArrayList<>() // roles/authorities
+                    new ArrayList<>() 
             );
         }
         throw new UsernameNotFoundException("User not found");
