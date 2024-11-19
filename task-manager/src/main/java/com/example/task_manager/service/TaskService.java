@@ -18,13 +18,13 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    // Create a new task
+   
     public Tasks createTask(Tasks task) {
-        task.setStatus(Tasks.Status.todo); // All new tasks start with "todo" status
+        task.setStatus(Tasks.Status.todo);
         return taskRepository.save(task);
     }
 
-    // Get all tasks organized by status (for GET /tasks)
+   
     public Map<String, List<Tasks>> getAllTasksOrganizedByStatus() {
         List<Tasks> allTasks = taskRepository.findAll();
 
@@ -50,7 +50,7 @@ public class TaskService {
         return tasksByStatus;
     }
 
-    // Move a task to the next column (for PUT /tasks/{id}/move)
+    
     public Tasks moveTask(Long id) {
         Tasks task = taskRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Task not found"));
@@ -66,7 +66,7 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    // Update an existing task (for PUT /tasks/{id})
+    
     public Tasks updateTask(Long id, Tasks updatedTask) {
         Tasks task = taskRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Task not found"));
@@ -79,7 +79,7 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    // Delete a task (for DELETE /tasks/{id})
+    
     public void deleteTask(Long id) {
         if (!taskRepository.existsById(id)) {
             throw new RuntimeException("Task not found");
@@ -87,7 +87,7 @@ public class TaskService {
         taskRepository.deleteById(id);
     }
 
-    // Get tasks sorted by priority within a column (for GET /tasks/sorted)
+  
     public List<Tasks> getTasksSortedByPriority(Tasks.Status status) {
         List<Tasks> allTasks = taskRepository.findAll();
 
@@ -102,7 +102,7 @@ public class TaskService {
         return filteredTasks;
     }
 
-    // Filter tasks by priority and due date (for GET /tasks/filter)
+   
     public List<Tasks> filterTasksByPriorityAndDueDate(Tasks.Priority priority, LocalDate dueDate) {
         List<Tasks> allTasks = taskRepository.findAll();
 
@@ -116,7 +116,7 @@ public class TaskService {
         return filteredTasks;
     }
 
-    // Generate a report of tasks by column and highlight overdue tasks (for GET /tasks/report)
+   
     public Map<String, Object> generateReport() {
         List<Tasks> allTasks = taskRepository.findAll();
 
