@@ -26,9 +26,9 @@ public class SecurityConfig {
 
 
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/authenticate", "/login").permitAll() // Public access
-                .requestMatchers("/tasks/**").authenticated() // Authentication required for /tasks/**
-                .anyRequest().authenticated() // Require authentication for all other requests
+                .requestMatchers("/api/authenticate", "/login").permitAll()
+                .requestMatchers("/tasks/**").authenticated()
+                .anyRequest().authenticated()
         );
 
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
