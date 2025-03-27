@@ -5,8 +5,6 @@ This project was developed as part of the **Object-Oriented Programming (OOP) co
 It is a **Task Manager** built using **Java** and **Spring Boot**, designed to apply OOP principles in a real-world scenario.  
 The system allows users to create, manage, and organize tasks efficiently while demonstrating key OOP concepts.
 
----
-
 ## 🚀 Features
 - 📝 **Create, Read, Update, Delete (CRUD)** operations for tasks  
 - 🎯 **Task Prioritization** based on user-defined parameters  
@@ -16,8 +14,6 @@ The system allows users to create, manage, and organize tasks efficiently while 
 - 🌐 **RESTful API** for seamless integration  
 - 🗄️ **Database Integration** using PostgreSQL  
 
----
-
 ## 📦 Tech Stack
 - **Backend:** Java, Spring Boot
 - **Database:** PostgreSQL
@@ -25,8 +21,6 @@ The system allows users to create, manage, and organize tasks efficiently while 
 - **Authentication:** JWT (JSON Web Token)
 - **Build Tool:** Maven
 - **Version Control:** Git & GitHub
-
----
 
 ## 🔧 Installation & Setup
 
@@ -53,8 +47,6 @@ mvn clean install
 mvn spring-boot:run
 ```
 
----
-
 ## 📡 API Endpoints
 
 ### 🧾 Authentication
@@ -66,7 +58,3 @@ mvn spring-boot:run
 - `POST /tasks` : Create a new task  
 - `PUT /tasks/{id}` : Update an existing task  
 - `DELETE /tasks/{id}` : Delete a task  
-
----
-
-Se quiser, posso gerar o `.md` para você baixar diretamente. Deseja isso?
